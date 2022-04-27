@@ -9,7 +9,7 @@ from poppy_face_display import poppy_face
 from poppy_emotion_recognition import poppy_emotion_recognizer
 from poppy_servo_control import poppy_body_gesture
 
-# Paths to phrases csv file, audio folder, and path to image faces
+# Paths to phrases csv file, audio folder, face images, and face recognizer xml file
 path_to_csv = ""
 audio_folder = ""
 faces_path = ""
