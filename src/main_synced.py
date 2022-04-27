@@ -10,9 +10,9 @@ from poppy_emotion_recognition import poppy_emotion_recognizer
 from poppy_servo_control import poppy_body_gesture
 
 # Paths to phrases csv file, audio folder, and path to image faces
-path_to_csv = "C:\\Users\\chens\\PycharmProjects\\PoppyHead\\Speech-Rec\\phrases_document.csv"
-audio_folder = "C:\\Users\\chens\\PycharmProjects\\PoppyHead\\Speech-Rec\\poppy_responses"
-faces_path = "C:\\Users\\chens\\PycharmProjects\\PoppyHead\\Speech-Rec\\face_attributes\\"
+path_to_csv = ""
+audio_folder = ""
+faces_path = ""
 # Use 1 if using builtin/only microphone
 input_index = 1
 run = True

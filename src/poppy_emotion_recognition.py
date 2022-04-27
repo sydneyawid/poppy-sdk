@@ -1,4 +1,3 @@
-# Emotion recognition for social robot poppy
 import cv2 as cv
 from deepface import DeepFace
 import numpy as np
@@ -6,7 +5,7 @@ import numpy as np
 
 class poppy_emotion_recognizer():
 
-    def __init__(self, capture):
+    def __init__(self, capture, model_path):
         super().__init__()
         self.video_capture = capture
         self.window_state = True
@@ -14,6 +13,7 @@ class poppy_emotion_recognizer():
         self.new_emotion_label = ['Angry', 'Disgusted', 'Frightened', 'Happy', 'Sad', 'Surprised', 'Neutral',
                                   'No Face Detected']
         self.backends = ['opencv', 'ssd', 'dlib', 'mtcnn', 'retinaface']
+        self.model = model_path
 
     def main_window(self):
         """
@@ -26,7 +26,7 @@ class poppy_emotion_recognizer():
 
             grayFrame = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
 
-            haarCas = cv.CascadeClassifier('Haar_faceRecog.xml')
+            haarCas = cv.CascadeClassifier(self.model)
 
             faceRectangle = haarCas.detectMultiScale(grayFrame, scaleFactor=1.1, minNeighbors=4)
             biggest_holder = []
