@@ -6,11 +6,11 @@ from poppy_servo_control import poppy_body_gesture
 
 
 class poppy_tracking():
-    def __init__(self, capture):
+    def __init__(self, capture, image_path, model_path):
         super().__init__()
         self.face_rectangle = None
         self.capture = capture
-        self.haar_cascade = None
+        self.haar_cascade = cv.CascadeClassifier(model_path)
         self.isTrue = None
         self.faceRectangle = None
         self.frame = None
@@ -21,7 +21,7 @@ class poppy_tracking():
         self.x_mid_point = 0
         self.y_mid_point = 0
 
-        self.face_attributes_path = 'C:\\Users\\Sydney Awid\\Desktop\\face_attributes\\'
+        self.face_attributes_path = image_path
         self.face = poppy_face(self.face_attributes_path)
         self.face_image = self.face.setup_image('neutral')
         self.display_face_window = 'Display Face'
@@ -72,7 +72,6 @@ class poppy_tracking():
             # setup frame, gray frame, and haar cascade
             self.frame = cv.flip(self.frame, 1)  # creates mirror effect between camera and screen
             self.gray_frame = cv.cvtColor(self.frame, cv.COLOR_BGR2GRAY)
-            self.haar_cascade = cv.CascadeClassifier('Haar_faceRecog.xml')
 
             self.face_rectangle = self.haar_cascade.detectMultiScale(self.gray_frame, scaleFactor=1.1, minNeighbors=4)
 

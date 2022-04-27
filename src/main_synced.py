@@ -13,6 +13,8 @@ from poppy_servo_control import poppy_body_gesture
 path_to_csv = ""
 audio_folder = ""
 faces_path = ""
+model_path = ""
+
 # Use 1 if using builtin/only microphone
 input_index = 1
 run = True

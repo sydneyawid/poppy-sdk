@@ -2,7 +2,7 @@ import pypot.dynamixel
 import time
 
 
-class poppy_body_gesture(object):
+class poppy_body_gesture():
     def __init__(self):
         super().__init__()
         self.dxl_io = pypot.dynamixel.DxlIO('COM3')

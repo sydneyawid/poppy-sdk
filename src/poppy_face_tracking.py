@@ -3,9 +3,9 @@ import cv2 as cv
 
 class poppy_tracking():
 
-    def __init__(self, capture):
+    def __init__(self, capture, model_path):
         self.capture = capture
-        self.haarCas = None
+        self.haarCas = cv.CascadeClassifier(model_path)
         self.isTrue = None
         self.faceRectangle = None
         self.frame = None
@@ -31,7 +31,6 @@ class poppy_tracking():
 
             self.frame = cv.flip(self.frame, 1)  # creates mirror effect between camera and screen
             self.grayFrame = cv.cvtColor(self.frame, cv.COLOR_BGR2GRAY)
-            self.haarCas = cv.CascadeClassifier('Haar_faceRecog.xml')
 
             self.faceRectangle = self.haarCas.detectMultiScale(self.grayFrame, scaleFactor=1.2, minNeighbors=4)
 
