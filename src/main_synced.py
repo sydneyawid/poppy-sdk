@@ -24,13 +24,13 @@ if __name__ == '__main__':
     # Cap1 is camera on poppy, cap2 is camera looking at poppy
     cap1 = cv2.VideoCapture(0, cv2.CAP_DSHOW)
     # Initialize emotion recognition
-    emotion_recognition = poppy_emotion_recognizer(cap1)
+    emotion_recognition = poppy_emotion_recognizer(cap1, model_path)
     # Initialize face tracking
     face_tracking = poppy_tracking(cap1)
     # Initialize speech class
     speech = poppy_speech(path_to_csv, audio_folder, faces_path, input_index)
     # Initialize face display
-    face_display = poppy_face(faces_path)
+    face_display = poppy_face(faces_path, model_path)
     # Initialize body gestures
     body_gesture = poppy_body_gesture()
 
