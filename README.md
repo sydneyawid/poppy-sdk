@@ -15,6 +15,11 @@ The Poppy Social Robotics Project utilizes the foundation of the [Poppy Project]
 Breif explanation on how it works and what it returns``
 
 ## Facial Recognition and Tracking
+```python
+	face_tracking = poppy_tracking(capture, model_path)
+	face_tracking.main_window()
+```
+
 `` Show how to call facial recognition and tracking
 Breif explanation on how it works and what it returns``
 
