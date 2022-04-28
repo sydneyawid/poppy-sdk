@@ -39,4 +39,13 @@ Breif explanation on how it works and what it returns``
 Breif explanation on how it works``
 
 
+>>> from transformers import pipeline
+
+# Allocate a pipeline for question-answering
+>>> question_answerer = pipeline('question-answering')
+>>> question_answerer({
+...     'question': 'What is the name of the repository ?',
+...     'context': 'Pipeline has been included in the huggingface/transformers repository'
+... })
+{'score': 0.30970096588134766, 'start': 34, 'end': 58, 'answer': 'huggingface/transformers'}
 
